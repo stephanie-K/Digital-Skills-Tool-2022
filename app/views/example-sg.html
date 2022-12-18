@@ -1,0 +1,47 @@
+
+{% extends "layouts/layout_sg.html" %}
+
+{% block pageTitle %}
+  Example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">My example page</h1>
+      <p>You can add your own content now</p>
+
+        
+<h2 class="govuk-heading-l govuk-!-margin-top-9">Buttons</h2>
+
+
+  <div style="padding-bottom: 2em" >
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+  
+    {{ govukButton({
+      text: "Next",
+      isStartButton: true
+    }) }}
+
+  </div>
+
+    <h2 class="govuk-heading-l">Sensitive content</h2>
+    <p>mygov.scot has a button to quickly go back to their home page when you are reading some sensitive content</p>
+    <p style="padding-bottom: 2em">See an <a href="https://www.mygov.scot/support-after-separation/" target="_blank" rel="noopener">example here</a>.</p>
+    <div class="sensitive-content" style="padding-bottom: 2em">
+    {{ govukButton({
+      text: "Hide this page now",
+      classes: "button-primary sg-button-sensitive",
+      href: "https://www.mygov.scot/"
+    }) }}
+    <p>Use this button or the <strong>Esc</strong> key on your keyboard to jump to home page.</p>
+    </div>
+  </div>
+</div>  
+{% endblock %}

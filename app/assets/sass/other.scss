@@ -1,0 +1,367 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+$bulb-pink: #e4228e;
+$bulb-green: #00ab55 ;
+$bulb-blue: #036;
+
+$pa-text-dark: #32325d;
+$pa-text-light: #6f6f8c;
+$pa-blue: #4768FD;
+$pa-pink: #D3368A;
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+//---------------------------------------- HEADER for any forms ------------------------------------------------//
+
+.govuk-header__container {
+    border-bottom: 0px;
+}
+
+.govuk-header__content {
+  border: none;
+    a {
+        text-decoration: none;
+    }
+}
+
+.govuk-header__logotype { // this will affect all forms using other.scss
+  margin: 22.5px;
+  a:focus {
+    background-color: #0000;
+    box-shadow: none;
+  }
+}
+
+// ----------------------------- footer styles ------------------------------------------------------------//
+
+.generic-footer {
+  padding-top: 0;
+  border-top: solid 2px #999;
+  background-color: #ededed;
+  .govuk-footer__meta {
+    margin-top:50px;
+  }
+  li {
+    padding: 16px;
+  }
+}
+
+
+// ---------------------------- remove the Yellow focus on link as it show on images ----------------------//
+
+a:focus {
+  background-color: #0000;
+  box-shadow: 0 -2px #0000, 0 4px #0000;
+}
+
+// ---------------------------- Book a theory test --------------------------------------------------------//
+
+.dvsa-theory-header {
+    border-bottom: 5px solid #ccc;
+    background: #DEE0E2;
+}
+
+.dvsa-grey-container {
+    border-top: 1px solid #e4e4e4;
+    background-color: #fafafa;
+    padding: 1em 3em;
+    @media only screen and (max-width: 490px) {
+        padding: 1em;
+    }
+}
+
+.dvsa-info-container {
+    border: 1px solid #005ea5;
+    border-left: 8px solid #005ea5;
+    background-color: #fff;
+    margin-bottom:20px;
+    padding: 1em;
+    p, li {
+        font-size: 14px;
+    }
+}
+
+.dvsa-help-container {
+    border: 1px solid #db6a00;
+    border-left: 8px solid #db6a00;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.dvsa-error-container {
+    border: 1px solid #DB0020;
+    border-left: 8px solid #DB0020;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.dvsa-map-number {
+    background-color: #1161fb;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 0.2em 0.4em;
+}
+
+.dvsa-white-container {
+    margin-bottom:1em;
+    border: 1px solid #ddd;
+    padding: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+
+img.dvsa, image.dvsa  {
+    @media only screen and (max-width: 490px) {
+        width:100%;
+    }
+}
+
+.small-font-dvsa{
+        font-size: 14px;
+}
+
+// -------------------------- Apply for provisional licence --------------------------------------------//
+
+.red-dvla-link:link,  .red-dvla-link:visited,  .red-dvla-link:active,  .red-dvla-link:focus{
+    color: #C00;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .8em;
+    background: #FFF url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
+}
+
+.red-dvla-link-dark:link,  .red-dvla-link-dark:visited,  .red-dvla-link-dark:active,  .red-dvla-link-dark:focus{
+    color: #C00;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .8em;
+    background: #e0e0e0 url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
+}
+
+.apply-DVLA-tagline {
+    font-size: 24px;
+    color: #fff;
+    background-color: #cc0000;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    margin: 0 20px;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
+}
+.orange-heading {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+.orange-block {
+    border: .1em solid #F90;
+    padding-bottom:1em;
+    p, li {
+        font-size: 14px;
+        margin: 0.7em;
+    }
+    li {
+        color: #666;
+        line-height:0.8;
+    }
+}
+
+.grey-block {
+    // border: .1em solid #F90;
+    background-color: #e0e0e0;
+    padding-bottom:1em;
+    p, li {
+        font-size: 14px;
+        margin: 0.7em;
+    }
+    li {
+        color: #666;
+        line-height:0.8;
+    }
+}
+
+.yellow-heading {
+    background-color: #ffe581;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+.grey-heading {
+    background-color: #e0e0e0;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+.small-font {
+    p, li {
+        font-size: 14px;
+    }
+}
+
+.govuk-button.dvla-cancel-button:link, .govuk-button.dvla-cancel-button:visited, .govuk-button.dvla-cancel-button:active, .govuk-button.dvla-cancel-button:hover{
+    border-radius: 4px;
+    margin-top:10px;
+    background: #999 url(../images/DVLA/butCancel.gif) no-repeat right;
+    padding: .4em 1.5em .5em .5em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+    border: none;
+    width: 6em;
+}
+
+
+.dvla-custom-next-button, .govuk-button.dvla-custom-next-button:visited, .govuk-button.dvla-custom-next-button:active, .govuk-button.dvla-custom-next-button:hover{
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    border-radius: 4px;
+    margin-top:10px;
+    background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
+    padding: .4em 1.3em .5em .5em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+    border: none;
+    width: 7em;
+}
+
+.govuk-button.dvla-previous-button:link, .govuk-button.dvla-previous-button:visited, .govuk-button.dvla-previous-button:active, .govuk-button.dvla-previous-button:hover{
+    border-radius: 4px;
+    margin-top:10px;
+    background: #C00 url(../images/DVLA/butArrowLeft.gif) no-repeat left;
+    padding: .4em .5em .5em 1.3em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    width: 7em;
+
+}
+
+.govuk-tag.red {
+    background-color: #b10e1e;
+   // margin-left: 10px;
+    padding: 5px;
+    text-transform: none;
+
+}
+
+.dvla-button-row {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 360px) {
+        flex-direction: column;
+        width:100%;
+        align-items: center;
+  }
+}
+
+.dvla-prov-licence-form-row-container {
+  border:.1em solid #CCC;
+  margin-bottom: .3em;
+}
+
+.dvla-prov-licence-label-container {
+  padding: .3em .6em .3em .6em;
+
+  .prov-licence-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.dvla-prov-licence-input-container {
+  padding: .3em .6em .3em .6em;
+  select {
+    font-size: 14px;
+    padding: 0;
+    border:.1em solid black;
+    border-radius: 3px;
+    option {
+      padding:0;
+    }
+  }
+  input {
+    font-size: 14px;
+    border:.1em solid black;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+
+}
+
+.dvla-prov-licence-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.govuk-details {
+  margin-bottom: 0px;
+}
+
+.govuk-details__summary-text {
+  font-size: 14px;
+  font-weight: bold;
+  color:#C00;
+}
+
+.govuk-details__text {
+  background-color: #FFFFCC;
+  border: none;
+}
+
+.govuk-details__summary.apl-red::before {
+  font-size: 14px;
+  color: #C00;
+} 
+
+.label-bold-text {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.provlError {
+  display: block;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 3px;
+  overflow: auto;
+  background: url(../images/DVLA/error.gif) 10px center no-repeat;
+  border: 1px solid #d8000c;
+}
+
+
+.link-disabled {
+    pointer-events: none;
+    cursor: default;
+}

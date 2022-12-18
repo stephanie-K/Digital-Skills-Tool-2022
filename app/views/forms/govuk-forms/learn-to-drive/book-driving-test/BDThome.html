@@ -1,0 +1,145 @@
+{#- didn't use the layout as the default one had to be modified to get the Part of component in the header -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+Book your driving test
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+  <div class="govuk-width-container">  
+      <div class="app-step-nav-header">
+        <span class="app-step-nav-header__part-of">Part of</span>
+        <a class="app-step-nav-header__title" href="#">
+          Learn to drive a car: step by step
+        </a>
+      </div>
+    </div>
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+        Book your driving test
+    </h1>
+   
+    <p>There have been changes to booking driving tests because of coronavirus (COVID-19).</p>
+    <p>You can book a driving test if <a href="/forms/govuk-forms/learn-to-drive/critical-workers">you’re classed as a critical worker</a>, for example you work in a hospital or as a carer.</p>
+    <p><a href="BDTstart">Book a driving test if you’re a critical worker</a>.</p>
+    
+    <h2 class="govuk-heading-m">If you’re not classed as a critical worker</h2>
+    <p>Car driving tests have restarted in England for people whose tests were cancelled because of coronavirus. You cannot book a new test at the moment.</p>
+    <p>Find out how to get a:</p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#">motorcycle test</a></li>
+      <li><a href="#">lorry, bus and coach driving test</a></li>
+      <li><a href="#">car and trailer driving test</a></li>
+    </ul>
+      
+      <p><a href="/forms/govuk-forms/learn-to-drive/test-restart">Find out when other driving tests will restart</a>.</p>
+      
+      <h2 class="govuk-heading-m">If you’ve already booked a test</h2>
+      <p>If you’ve booked a car driving test, you’ll get an email and can choose a new date for your test.</p>
+      <p>If you’ve booked another type of test that has been cancelled, you’ll get a refund.</p>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "/index.html",
+            text: "Home"
+          },
+          {
+            href: "/how-to-use.html",
+            text: "How to use"
+          },
+          {
+            href: "/about.html",
+            text: "About"
+          },
+          {
+            href: "/creating-this-website.html",
+            text: "Creating this website"
+          },
+          {
+            href: "/contact.html",
+            text: "Get in touch"
+          },
+          {
+            href: "/manage-prototype/clear-data",
+            text: "Clear the data"
+          }
+        ]
+      }
+    }) }}
+
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+    <script src="/public/javascripts/step-by-step-nav.js"></script>
+    <script type="text/javascript">
+      var $element = $('#step-by-step-navigation')
+      var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+      stepByStepNavigation.start($element)
+    </script>
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+  {% endblock %}
+
+
+ 

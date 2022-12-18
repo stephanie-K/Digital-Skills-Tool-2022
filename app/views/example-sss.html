@@ -1,0 +1,50 @@
+
+{% extends "layouts/layout_sss.html" %}
+
+{% block pageTitle %}
+  Example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        My example page
+      </h1>
+
+      <p>
+        You can add your own content now
+      </p>
+
+      <hr>
+      <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+        <span style="font-size:17px; padding-left:10px;">write your notice here</span></p>
+      <hr class="govuk-!-margin-bottom-5">
+
+      <div class="govuk-form-group " style="padding-bottom: 4em">
+        <a href="#" role="button" draggable="false" class="govuk-button button-primary govuk-!-margin-bottom-0" data-module="govuk-button" style="width: 160px">
+          Find address
+        </a>
+      </div>
+
+<div style="padding-bottom: 2em" >
+
+      {{ govukButton({
+        text: " < Back",
+        classes: "sg-button-back",
+        href: "javascript: history.go(-1)"
+      }) }}
+    
+      {{ govukButton({
+        text: "Next",
+        isStartButton: true
+      }) }}
+
+    </div>
+
+
+    </div>
+  </div> 
+
+{% endblock %}

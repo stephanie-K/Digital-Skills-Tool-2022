@@ -1,0 +1,100 @@
+
+{% extends "layouts/layout_erc.html" %}
+
+{% block pageTitle %}
+  Example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl heading-title">
+        My example page
+      </h1>
+      <a class=" button-secondary govuk-button" href="javascript: history.go(-1)">Back</a>
+   
+      <h2 class="govuk-heading-l">
+          Example of message boxes
+      </h2>
+      <div>
+          <p class="ercInformation">I'm an information message box</p>
+          <p class="ercSuccess">I'm a success message box</p>
+          <p class="ercWarning">I'm a warning message box</p>
+          <p class="ercError">I'm an error message box</p>
+      </div>
+
+      <h2 class="govuk-heading-l">
+          Example of buttons
+      </h2>    
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Primary Button",
+          classes: "button-primary"
+        }) }}
+
+        {{ govukButton({
+          text: "Secondary Button",
+          classes: "button-secondary"
+        }) }}
+
+        {{ govukButton({
+          text: "Warning Button",
+          classes: "button-warning"
+        }) }}
+
+        <h2 class="govuk-heading-l">
+            Example of different headings and buttons
+        </h2>
+  
+        <h1 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h1> 
+<br>
+        <p class="erc-alt-dark-blue-bg">This is a different main heading on some forms</p> 
+<br>
+        <p class="erc-alt-dark-grey-round">This is a different secondary heading - subtitle -  on some forms</p> 
+<br>
+        <p class="erc-alt-dark-grey">This is a different secondary heading - intro -  on some forms</p> 
+<br>
+        <p class="govuk-heading-s erc-alt-light-grey">
+            This is a another secondary heading-  on some forms</p> 
+<br><br>
+        {{ govukButton({
+          text: "<< Back",
+          classes: "button-primary erc-alt"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary erc-alt"
+        }) }}
+
+        {{ govukButton({
+          text: "Submit",
+          classes: "button-primary erc-alt-submission"
+        }) }}
+        <br>
+
+        <h2 class="govuk-heading-l">
+            The print icon and social media
+        </h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <br>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p>Share this page 
+              <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+              <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+              <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+            </p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p>Print 
+              <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+            </p>
+          </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
