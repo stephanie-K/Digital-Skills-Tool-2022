@@ -73,12 +73,7 @@ $erc-grey-bg: #e5e5e5;
     }
 }
 
-
-
 .govuk-header__content {
-    @media only screen and (min-width: 169px) {
-    border: 10px solid $erc-green;
-    }
     a {
         text-decoration: none;
     }
@@ -190,8 +185,13 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
     text-align: right;
 }
 
+.govuk-heading-xl {
+    font-weight:800;
+ }
+
 .govuk-heading-l {
    margin-top: 50px;
+   font-weight:800;
 }
 
 .govuk-heading-m {
@@ -203,14 +203,25 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
     color: white;
     background-color:$erc-green;
     padding: 0.5em;
-    margin-top: 2px;
 }
 
 .big-heading span {
     color: white;
     font-weight: 600;
     font-size: 1.4em;
+    padding-left:1em;
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+
+.govuk-details__summary.big-heading:before {
+    left: 10px;
+}
+
+.govuk-details__summary.big-heading:focus{
+    background-color:$erc-green;
+    box-shadow: 0 -2px $erc-green, 0 4px #0b0c0c;
+    color: #fff;
 }
 
 .heading-title {
@@ -239,17 +250,6 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
     font-size: 1.5em;
 }
 
-// added after the update with Prototype version 13
-.govuk-width-container {
-    max-width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-// added after the update with Prototype version 13
-body {
-    margin-top: 0;
-}
 //not the best to remove it but I don't have time to fix it better
 .govuk-skip-link{
     display:none;

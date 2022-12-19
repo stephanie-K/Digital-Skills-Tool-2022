@@ -150,14 +150,6 @@ body p, li, span, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-hea
 }
 
 
-
-// added after the update with Prototype version 13
-.govuk-width-container {
-    max-width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 body {
     margin-top: 0;
 }
@@ -260,8 +252,6 @@ a.govuk-button--start{
 
 a.button-primary, a.button-secondary{
     color: #fff !important;
-    padding-top: 18px !important;
-    padding-bottom: 18px !important;
 }
 
 
