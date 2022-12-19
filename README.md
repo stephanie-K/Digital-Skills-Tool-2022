@@ -3,8 +3,10 @@ A website to provide prototyped forms to support classes for people to learn dig
 
 The code base was initially here: [DigitalSkillsTool](https://github.com/stephanie-K/DigitalSkillsTool)
 
-It was deployed using Heroku but since November 2022 Heroku is not free anymore. The version of the GOV.UK prototype was old and it would have been hard to update it. This new codebase is now using a more recent version of the kit and reuse most of the previous views.
+_The GOV.UK prototype version used to run it was old and it would have been hard to update it. It's deployed and hosted by Heroku who changed their support model in November 2022. Without updating the prototype kit, it could not be deployed anymore This new codebase is now using a more recent version of the kit and reuse most of the previous views.
 It's not used to support classes anymore but I'm keeping it to be able to show how it worked.
+
+You can access the website here: [erc-tool.herokuapp.com](https://erc-tool.herokuapp.com/) you will be asked for a password, it's: **erc-tool** 
 
 # Previous description of this work
 
