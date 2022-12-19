@@ -38,6 +38,138 @@
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+              {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+              {% set feedbackYesHtml %}
+              {{ govukTextarea({
+                name: "comments-yes",
+                id: "comments-yes",
+                label: {
+                  text: "Your comments"
+                }
+              }) }}
+              <p><strong>Note:</strong> Your feedback will help us make improvements on this site. Please don't provide any <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/key-definitions/what-is-personal-data/" target="_blank" rel="noopener">personal information</a> <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></p>
+                    {{ govukButton({
+        text: "Send feedback",
+        classes: "button-primary",
+        href: "/forms/sss-forms/feedback-sent.html"
+      }) }}
+              {% endset -%}
+
+              {% set feedbackNoHtml %}
+              {{ govukSelect({
+                id: "why-no",
+                name: "why-no",
+                label: {
+                  text: "Choose a reason for your feedback",
+                  classes: "govuk-!-font-weight-bold"
+                },
+                items: [
+                  {
+                    value: "select",
+                    text: "Please select a reason",
+                    selected: true
+                  },
+                  {
+                    value: "not-detailed",
+                    text: "It wasn't detailed enough"
+                  },
+                  {
+                    value: "hard",
+                    text: "It was hard to understand"
+                  },
+                  {
+                    value: "incorrect",
+                    text: "It's incorrect"
+                  },
+                  {
+                    value: "out-of-date",
+                    text: "It needs updating"
+                  },
+                  {
+                    value: "broken",
+                    text: "There's a broken link"
+                  },
+                  {
+                    value: "not-what-looking-for",
+                    text: "It wasn't what I was looking for"
+                  },
+                  {
+                    value: "other",
+                    text: "Other"
+                  }
+                ]
+              }) }}
+
+              {{ govukTextarea({
+                name: "comments-no",
+                id: "comments-no",
+                label: {
+                  text: "Your comments"
+                }
+              }) }}
+              <p><strong>Note:</strong> Your feedback will help us make improvements on this site. Please don't provide any <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/key-definitions/what-is-personal-data/" target="_blank" rel="noopener">personal information</a> <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></p>
+                    {{ govukButton({
+        text: "Send feedback",
+        classes: "button-primary",
+        href: "/forms/sss-forms/feedback-sent.html"
+      }) }}
+              {% endset -%}
+
+              {% set feedbackYesButHtml %}
+              {{ govukSelect({
+                id: "why-yes-but",
+                name: "why-yes-but",
+                label: {
+                  text: "Choose a reason for your feedback",
+                  classes: "govuk-!-font-weight-bold"
+                },
+                items: [
+                  {
+                    value: "select",
+                    text: "Please select a reason",
+                    selected: true
+                  },
+                  {
+                    value: "out-of-date",
+                    text: "It needs updating"
+                  },
+                  {
+                    value: "spelling",
+                    text: "There is a spelling mistake"
+                  },
+                  {
+                    value: "hard",
+                    text: "It was hard to understand"
+                  },
+
+                  {
+                    value: "broken",
+                    text: "There's a broken link"
+                  },
+                  {
+                    value: "other",
+                    text: "Other"
+                  }
+                ]
+              }) }}
+              {{ govukTextarea({
+                name: "comments-yes-but",
+                id: "comments-yes-but",
+                label: {
+                  text: "Your comments"
+                }
+              }) }}
+              <p><strong>Note:</strong> Your feedback will help us make improvements on this site. Please don't provide any <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/key-definitions/what-is-personal-data/" target="_blank" rel="noopener">personal information</a> <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></p>
+                    {{ govukButton({
+        text: "Send feedback",
+        classes: "button-primary",
+        href: "/forms/sss-forms/feedback-sent.html"
+      }) }}
+              {% endset -%}
+
               {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
               {{ govukRadios({
@@ -53,19 +185,28 @@
                 items: [
                   {
                     value: "yes",
-                    text: "Yes"
+                    text: "Yes",
+                    conditional: {
+                      html: feedbackYesHtml
+                    }
                   },        
                   {
                     value: "no",
-                    text: "No"
+                    text: "No",
+                    conditional: {
+                      html: feedbackNoHtml
+                    }
                   },
                   {
                     value: "but",
-                    text: "Yes, but"
+                    text: "Yes, but",
+                    conditional: {
+                      html: feedbackYesButHtml
+                    }
                   }
                 ]
               }) }}
-              <p><strong>Note:</strong> Your feedback will help us make improvements on this site. Please don't provide any <a href="/forms/sss-forms/feedback.html">personal information</a> <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></p>
+             
             </div>
         </div>
     </div>
