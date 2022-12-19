@@ -6,7 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// From the prvious route file, old kit ******************************************************
+// From the previous route file, old kit ******************************************************
 // const express = require('express')
 // const router = express.Router()
 // module.exports = router
@@ -645,19 +645,17 @@ const router = govukPrototypeKit.requests.setupRouter()
     return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
   })
   
-  // not sure why the first route witht the or condition don't work - TODO: more testing on this
   router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
     var whereYouLive = req.session.data['UC-where-you-live']
-    if ((whereYouLive === 'rentFromCouncil') ||
-        (whereYouLive === 'rentFromPrivateLandlord')
-        ) {
-          res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
-        }
-        if (whereYouLive === 'tempAcc'){
-            res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
-            } else {
-                    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingNotSure')
-                    }
+    if (whereYouLive === 'tempAcc'){
+        res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
+        } else {
+          if ((whereYouLive === 'rentFromCouncil') || (whereYouLive === 'rentFromPrivateLandlord')) {
+            res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
+          } else {
+                res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingNotSure')
+                  }
+                }
   })
   
   router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation', function (req, res) {
