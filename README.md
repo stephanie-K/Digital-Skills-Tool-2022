@@ -6,7 +6,6 @@ The code base was initially here: [DigitalSkillsTool](https://github.com/stephan
 _The GOV.UK prototype version used to run it was old and it would have been hard to update it. It's deployed and hosted by Heroku who changed their support model in November 2022. Without updating the prototype kit, it could not be deployed anymore This new codebase is now using a more recent version of the kit and reuse most of the previous views._
 _It's not used to support classes anymore but I'm keeping it to be able to show how it worked._
 
-## You can access the website here: [erc-tool.herokuapp.com](https://erc-tool.herokuapp.com/) you will be asked for a password, it's: **erc-tool** 
 
 # Previous description of this work
 
@@ -27,11 +26,7 @@ The course is developed for the **East Renfrewshire Council** and the website su
 
 This is using the [**GOV.UK Prototype kit**](https://prototype-kit.service.gov.uk/docs/)
 
-You can visit the website here: [**need to add url**]() you will be asked for a username and password, both are: **erc-tool**
-
-You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
-
-[**Watch this video**](https://www.youtube.com/embed/9JQ7CNYQrpY) or [look at this PDF](/app/assets/images/help/Using_the_digital_skills_website.pdf) if you prefer.
+You can [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
 
 ## How we are using the tool
 
